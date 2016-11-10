@@ -1,6 +1,6 @@
-create database nodeworkshop;
+create database pgexmaple;
 
-\c nodeworkshop;
+\c pgexmaple;
 
 create table if not exists trains (
   id serial primary key,
@@ -9,9 +9,9 @@ create table if not exists trains (
   numberOfAvailable int
 );
 
-create role nodeuser with password '13149700' login;
-grant connect on database nodeworkshop to nodeuser;
-grant select on public.trains to nodeuser;
+create role pgexmaple with password '13149700' login;
+grant connect on database pgexmaple to nodeuser;
+grant select on public.trains to pgexmaple;
 
 insert into trains (name, inService, numberOfAvailable) values ('redline 813', true, '8');
 insert into trains (name, inService, numberOfAvailable) values ('redline 912', true, '10');
