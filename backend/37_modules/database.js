@@ -1,8 +1,9 @@
 "use strict";
 
 var pg = require('pg');
+var connectionString = require('../config.js').DATABASE_URL;
 
-module.exports = function(connectionString) {
+module.exports = function() {
   return {
     executeQuery: function(query, callback){
       pg.connect(connectionString, function(err, client, done) {

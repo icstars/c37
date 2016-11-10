@@ -58,6 +58,6 @@ router.post('string with your route', function(req,res){
 You will not need to modify this file. This file is really all you need to get your node/express app up and running. If you want to learn more you should check out [expressjs]().
 
 
-### `/c36_modules` directory
+### `/c37_modules` directory
 
 These are abstractions or things that you don't need to worry about. If you have your application working and want to dive more into making "modules" reach out to Dan LaFeir to learn more.
