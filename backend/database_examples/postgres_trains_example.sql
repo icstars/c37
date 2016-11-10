@@ -1,19 +1,23 @@
-create database pgexmaple;
+-- Run the following command psql -f path/to/sql/file to set up the train database 
 
-\c pgexmaple;
-
+drop table if exists trains;
 create table if not exists trains (
   id serial primary key,
-  name text,
+  trainNumber int unique,
+  lineColor text,
   inService boolean,
-  numberOfAvailable int
+  UNIQUE (trainNumber, lineColor)
 );
 
-create role pgexmaple with password '13149700' login;
-grant connect on database pgexmaple to nodeuser;
-grant select on public.trains to pgexmaple;
-
-insert into trains (name, inService, numberOfAvailable) values ('redline 813', true, '8');
-insert into trains (name, inService, numberOfAvailable) values ('redline 912', true, '10');
-insert into trains (name, inService, numberOfAvailable) values ('greenline 713', true, '10');
-insert into trains (name, inService, numberOfAvailable) values ('brownline 412', true, '8');
+insert into trains (trainNumber, lineColor, inService) values (302, 'redline', true);
+insert into trains (trainNumber, lineColor, inService) values (222, 'redline', false);
+insert into trains (trainNumber, lineColor, inService) values (093, 'redline', false);
+insert into trains (trainNumber, lineColor, inService) values (312, 'greenline', true);
+insert into trains (trainNumber, lineColor, inService) values (329, 'greenline', false);
+insert into trains (trainNumber, lineColor, inService) values (523, 'greenline', true);
+insert into trains (trainNumber, lineColor, inService) values (300, 'blueline', true);
+insert into trains (trainNumber, lineColor, inService) values (253, 'blueline', true);
+insert into trains (trainNumber, lineColor, inService) values (534, 'brownline', false);
+insert into trains (trainNumber, lineColor, inService) values (444, 'brownline', true);
+insert into trains (trainNumber, lineColor, inService) values (552, 'brownline', true);
+insert into trains (trainNumber, lineColor, inService) values (049, 'brownline', true);
