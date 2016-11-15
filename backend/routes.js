@@ -9,12 +9,8 @@ module.exports = function() {
     return res.render('helloworld.html');
   });
 
-  router.get('/helloworld', function(req,res){
-    return res.render('helloworld.html');
-  });
-
-  router.get('/landing', function(req, res) {
-    return res.render('landing.html');
+  router.get('/trains', function(req,res){
+    return res.render('trains.html');
   });
 
   /* Your code here */
