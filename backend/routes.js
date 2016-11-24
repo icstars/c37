@@ -13,6 +13,12 @@ module.exports = function() {
     return res.render('trains.html');
   });
 
+  router.get('/trains/data', function(req,res){
+    database.executeQuery("SELECT * FROM trains", function(results) {
+      res.send(results);
+    });
+  });
+
   /* Your code here */
 
   return router
