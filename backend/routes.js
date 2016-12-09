@@ -19,6 +19,12 @@ module.exports = function() {
     });
   });
 
+  router.post('/trains/data', function(req,res){
+    database.executeQuery("INSERT INTO trains VALUES...", function(results) {
+      res.send(results);
+    });
+  });
+
   /* Your code here */
 
   return router
