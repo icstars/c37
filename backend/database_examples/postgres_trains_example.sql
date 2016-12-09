@@ -1,12 +1,12 @@
--- Run the following command psql -f path/to/sql/file to set up the train database 
+-- Run the following command psql -f path/to/sql/file to set up the train database
 
 drop table if exists trains;
+
 create table if not exists trains (
   id serial primary key,
   trainNumber int unique,
   lineColor text,
-  inService boolean,
-  UNIQUE (trainNumber, lineColor)
+  inService boolean
 );
 
 insert into trains (trainNumber, lineColor, inService) values (302, 'redline', true);
